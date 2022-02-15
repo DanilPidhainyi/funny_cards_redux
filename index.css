@@ -17,19 +17,96 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: rebeccapurple;
+
 }
 
 .container .card {
     width: 140px;
     height: 200px;
     padding: 10px;
-    background: radial-gradient(transparent, transparent 4px, white 4px,white);
     background-size: 20px 20px;
     background-position: -10px -10px; /*обрезаем узор по краю*/
     margin: 0 auto;
 }
 
+.card--off {
+    background: radial-gradient(transparent, transparent 4px, white 4px,white);
+}
+
+.card--on {
+    background: yellow radial-gradient(transparent, transparent 4px, white 4px, white);
+    box-shadow: 0 0 15px 10px yellow;
+    transition-duration: 300ms;
+}
+
 img {
     width: 100%;
-    height: 100%;
+}
+
+.switch {
+    width: 40px;
+    height: 40px;
+    background-color: #F6EFD2;
+    box-shadow: 0 0 2px 2px black, inset 0 0 2px 1px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.switch .switch_input {
+    display: none;
+}
+
+.switch .switch_slider {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/*без коментарів :)*/
+
+.switch .switch_slider {
+    width: 21px;
+    height: 22px;
+    box-shadow: 0 0 1px 1px black,
+                inset 0 0 1px 1px #b7b0b0,
+                inset 0 4px 0  gray,
+                0 -2px 2px 2px rgba(198, 196, 196, 60%);
+    /*-webkit-box-shadow: inset 0 1px 1px 0px #b7b0b0;*/
+    background-color: white;
+    border-radius: 2px;
+    transition-duration: 200ms;
+    /*3d анімація*/
+    -webkit-transform: rotateX(-25deg);
+    -ms-transform: rotateX(-25deg);
+    transform: rotateX(-25deg);
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.switch_input:checked + .switch_slider {
+    background-color: white;
+    transition-duration: 200ms;
+    box-shadow: 0 0 1px 1px black,
+        inset 0 0 1px 1px #b7b0b0,
+        inset 0 -4px 0 gray,
+        0 2px 2px 2px rgba(198, 196, 196, 60%);
+    /*3d анімація*/
+    -webkit-transform: rotateX(25deg);
+    -ms-transform: rotateX(25deg);
+    transform: rotateX(25deg);
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+
+.cardAndSwitch {
+    width: 140px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
 }
